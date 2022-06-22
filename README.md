@@ -5,7 +5,7 @@ Web3.py is a Python library for interacting with Ethereum.
 ## requestments
 
 ```shell
-pip install -r requestments
+pip install -r requirements.txt
 
 from solcx import install_solc
 
