@@ -1,0 +1,8 @@
+0x7E5F4552091A69125d5DfCb7b8C2659029395Bdf
+
+Hellob'\x8d\xaa\x8b\xdb\xbb\x0c\xd1=\xb37[7\xa8\xfc\xcb\xfdg1\xfc\x05\xff\xd7\x08\xd2*\xd2\xb0lC\xcf@\xc3'
+
+AttributeDict({'blockHash': HexBytes('0x060d3c6e75e34982b8cd9253af1402475b7bba177148e64c18591cd5859092b4'), 'blockNumber': 2, 'contractAddress': None, 'cumulativeGasUsed': 28074, 'effectiveGasPrice': 1000000000, 'from': '0x7E5F4552091A69125d5DfCb7b8C2659029395Bdf', 'gasUsed': 28074, 'logs': [], 'state_root': b'\x01', 'status': 1, 'to': '0xF2E246BB76DF876Cef8b38ae84130F4F55De395b', 'transactionHash': HexBytes('0x8daa8bdbbb0cd13db3375b37a8fccbfd6731fc05ffd708d22ad2b06c43cf40c3'), 'transactionIndex': 0, 'type': '0x2'})
+
+Nihao
+
