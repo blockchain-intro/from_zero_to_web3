@@ -1,0 +1,17 @@
+{
+  "name": "test_gt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "circular-json": "^0.5.9",
+    "ganache-cli": "^6.12.2",
+    "web3": "^1.7.4"
+  }
+}
