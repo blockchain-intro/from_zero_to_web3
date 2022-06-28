@@ -9,7 +9,7 @@ const CircularJSON = require('circular-json');
 
 var server = ganache.server();
 // 监听8545端口
-server.listen(8545, function(err, blockchain) {
+server.listen(7545, function(err, blockchain) {
       console.log(err);
     // console.log(blockchain)
     // fs.writeFileSync('blockchain.txt', CircularJSON.stringify(blockchain));
