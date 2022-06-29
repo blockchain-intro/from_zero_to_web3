@@ -1,7 +1,13 @@
-输入
+## 启动ganache私链
 
 ```
 ganache-cli -h 127.0.0.1 -p 7545 -i 5777
+
+```
+
+### 输出
+
+```
 Ganache CLI v6.12.2 (ganache-core: 2.13.2)
 
 Available Accounts
@@ -157,8 +163,15 @@ eth_getTransactionReceipt
 ```
 
 
-输出
+## 合约编译与部署
 
+```
+truffle compile
+
+truffle migrate
+```
+
+### 输出
 
 ```
 
@@ -247,11 +260,7 @@ Summary
 ```
 
 
-
-
-
-
-测试truffle
+## truffle控制台
 
 
 
