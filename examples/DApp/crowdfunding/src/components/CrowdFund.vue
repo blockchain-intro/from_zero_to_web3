@@ -79,7 +79,7 @@ export default {
         try {
           await window.ethereum.enable();
         } catch (error) {
-          //   console.log("User denied account access");
+          console.log("User denied account access");
         }
       } else if (window.web3) {
         this.provider = window.web3.currentProvider;
@@ -153,13 +153,11 @@ export default {
 
     // 赎回
     withdraw() {
-      this.crowdFund.withdraw(
-        this.crowdFund.withdraw({
-          from: this.account
+      this.crowdFund.withdraw({
+        from: this.account
         }).then(() => {
           this.getCrowdInfo()
-        })
-      );
+        });
     },
 
     // 提取资金
