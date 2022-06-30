@@ -10,10 +10,17 @@
 
 
 - 启动ganache：`ganache-cli -h 127.0.0.1 -p 7545 -i 5777`
+- 绑定metamask：`name、url、链id`
+
+
 - 执行智能合约：`truffle migrate`，**这里truffle配置port为7545**
+- 测试服务：`npm run serve`
+
+## 测试
 
 
-
-
-
+- 启动ganache：`ganache-cli -h 127.0.0.1 -p 7545 -i 5777`
+- 绑定metamask：`name、url、链id`
+- 测试服务：`npm run serve`
+- 测试web
 
