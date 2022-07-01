@@ -1,2 +1,4 @@
-examples/test_gt/node_modules/*
+examples/TestGanacheJS/node_modules/*
 examples/DApp/crowdfunding/node_modules/*
+examples/DApp/db/*
+

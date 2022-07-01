@@ -71,7 +71,6 @@ export default {
   },
 
   methods: {
-
     // 初始化 web3及账号
     async initWeb3Account() {
       if (window.ethereum) {
@@ -84,12 +83,13 @@ export default {
       } else if (window.web3) {
         this.provider = window.web3.currentProvider;
       } else {
-        this.provider = new Web3.providers.HttpProvider("http://127.0.0.1:7545");
+        this.provider = new Web3.providers.HttpProvider("http://127.0.0.1:8545");
       }
       this.web3 = new Web3(this.provider);
-      this.web3.eth.getAccounts().then(accs  => {
-        this.account = accs[0]
-      });
+      console.log("配置web3",this.web3)
+      this.account = this.web3.eth.accounts[0]
+      console.log("配置account",this.account)
+
     },
 
     // 初始化合约实例
@@ -101,18 +101,21 @@ export default {
 
     // 获取合约的状态信息
     async getCrowdInfo() {
-      // 获取合约的余额
-      this.web3.eth.getBalance(this.crowdFund.address).then(
-        r => {
-          this.total = this.web3.utils.fromWei(r)
+      console.log('author adderss:', this.crowdFund.address)
+       this.total = this.web3.fromWei(this.web3.eth.getBalance(this.crowdFund.address, function (error, result) {
+        if (!error) {
+          console.log("author balance", result);
+        } else {
+          console.error(error);
         }
-      );
+      }));
+
       // 获取读者的参与金额， joined 在合约中是public 的状态变量，自动生成相应的访问器函数
       this.crowdFund.joined(this.account).then(
         r => {
           if (r > 0) {
             this.joined = true
-            this.joinPrice = this.web3.utils.fromWei(r)
+            this.joinPrice = this.web3.fromWei(r)
           }
         }
       );
@@ -122,7 +125,7 @@ export default {
       );
       // 获取当前的众筹价格
       this.crowdFund.price().then(
-        r => this.price = this.web3.utils.fromWei(r)
+        r => this.price = this.web3.fromWei(r)
       );
       // 获取众筹截止时间
       this.crowdFund.endTime().then(r => {
@@ -145,11 +148,18 @@ export default {
       this.web3.eth.sendTransaction({
         from: this.account,
         to: this.crowdFund.address,
-        value: this.web3.utils.toWei(this.price)
-      }).then(() =>
-        this.getCrowdInfo()
-      );
+        value: this.web3.toWei(this.price)}, function (error, result) {
+          if (!error) {
+            console.log("result", result);
+          } else {
+            console.error(error);
+          }
+        }
+      )
+      this.getCrowdInfo();
     },
+
+
 
     // 赎回
     withdraw() {

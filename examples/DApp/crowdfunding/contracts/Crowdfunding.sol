@@ -9,7 +9,7 @@ contract Crowdfunding {
     // 众筹截止时间
     uint public endTime;
     // 记录当前众筹价格
-    uint public price = 0.02 ether;
+    uint public price = 2 ether;
     // 作者提取资金之后，关闭众筹
     bool public closed = false;
     // 部署合约时调用，初始化作者及众筹结束时间
@@ -19,8 +19,8 @@ contract Crowdfunding {
     }
     // 更新价格，这是一个内部函数
     function updatePrice() internal {
-        uint rise = address(this).balance / 1 ether * 0.002 ether;
-        price = 0.02 ether + rise;
+        uint rise = address(this).balance / 1 ether * 2 ether;
+        price = 2 ether + rise;
     }
     // 用户向合约转账时，触发的回调函数
     receive() external payable {

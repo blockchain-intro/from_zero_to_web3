@@ -13,7 +13,7 @@
     "node-polyfill-webpack-plugin": "^2.0.0",
     "truffle-contract": "^3.0.4",
     "vue": "^3.2.13",
-    "web3": "^0.20.7"
+    "web3": "^0.20.5"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
