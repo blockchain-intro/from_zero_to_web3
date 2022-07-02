@@ -8,13 +8,13 @@ const ganache = require("ganache-cli");
 const CircularJSON = require('circular-json');
 
 var server = ganache.server();
-// 监听8545端口
+// 监听7545端口
 server.listen(7545, function(err, blockchain) {
       console.log(err);
     // console.log(blockchain)
     // fs.writeFileSync('blockchain.txt', CircularJSON.stringify(blockchain));
     // 输出ganache-cli中区块链数据结构及内容到blockchain文件中
-      fs.writeFileSync('./examples/test_gt/blockchain.txt', CircularJSON.stringify(blockchain, null, '\t'));
+      fs.writeFileSync('./examples/TestGanacheJS/blockchain.txt', CircularJSON.stringify(blockchain, null, '\t'));
     // 打印钱包助记词
     console.log(blockchain.mnemonic);
 });

@@ -14,7 +14,7 @@ contract Crowdfunding {
     bool public closed = false;
     // 部署合约时调用，初始化作者及众筹结束时间
     constructor() public {
-        author = msg.sender;
+        author = 0x755DA5B4187564284A04A28ffFd876483EAEd967;
         endTime = now + 30 days;
     }
     // 更新价格，这是一个内部函数

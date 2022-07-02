@@ -23,14 +23,14 @@
 
 ### 测试
 
-- 启动私链：`ganache-cli -h 127.0.0.1 -p 8545 -i 5777`
+- 启动私链：``
 - 绑定metamask：`name、url、链id`
 - 执行智能合约：`truffle compile、truffle migrate`
 - 测试服务：`npm run serve`
 - 后台验证：`truffle console`
 - 前台验证：web
 
-### QA
+### QAganache-cli -h 127.0.0.1 -p 8545 -i 5777
 
 1. codespace设置port public visibility
 2. web页面自动调用MetaMask在线账号
