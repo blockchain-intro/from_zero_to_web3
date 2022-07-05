@@ -23,14 +23,23 @@
 
 ### 测试
 
-- 启动私链：``
-- 绑定metamask：`name、url、链id`
+- 启动私链：`ganache-cli -h 127.0.0.1 -p 8545 -i 5777`
 - 执行智能合约：`truffle compile、truffle migrate`
 - 测试服务：`npm run serve`
 - 后台验证：`truffle console`
 - 前台验证：web
 
-### QAganache-cli -h 127.0.0.1 -p 8545 -i 5777
+#### run
+1. 绑定metamask
+   1. 创建blockchain：`name、url、链id`
+   2. 使用ganache创建的虚拟账户，**链接登录到该blockchain上**
+2. 打开web，解锁MetaMask
+3. 参与众筹，执行转账。
+
+执行结果，参考`./run_results/`，能发现众筹金额发生变化，每次转账后会执行`getCrowdInfo()`方法，更新前端展示。
+
+
+### QA
 
 1. codespace设置port public visibility
 2. web页面自动调用MetaMask在线账号
