@@ -5,4 +5,7 @@
 - truffle compile
 - truffle migrate --network ropsten
 
-获取ropsten的虚拟coin：https://faucet.egorfine.com/
+记录`truffle.log`中的info。
+
+> 获取ropsten的虚拟coin：https://faucet.egorfine.com/
+
