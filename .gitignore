@@ -1,4 +1,5 @@
 examples/TestGanacheJS/node_modules/*
 examples/DApp/crowdfunding/node_modules/*
 examples/DApp/db/*
+infura_tutorial/00_deploy_contract/node_modules
 
