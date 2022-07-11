@@ -1,0 +1,53 @@
+@Muzhi1920 ➜ /workspaces/from_zero_to_web3/infura_tutorial/00_deploy_contract (dev_infura ✗) $  truffle compile
+
+Compiling your contracts...
+===========================
+> Everything is up to date, there is nothing to compile.
+@Muzhi1920 ➜ /workspaces/from_zero_to_web3/infura_tutorial/00_deploy_contract (dev_infura ✗) $ truffle migrate --network ropsten
+
+Compiling your contracts...
+===========================
+> Everything is up to date, there is nothing to compile.
+
+
+Starting migrations...
+======================
+> Network name:    'ropsten'
+> Network id:      3
+> Block gas limit: 30000000 (0x1c9c380)
+
+
+1_initial_migration.js
+======================
+
+   Deploying 'Migrations'
+   ----------------------
+   > transaction hash:    0xebebd170dc054086bb50c557fb289045b9c1a42f2459999cfcc2cebd75622f9b
+   > Blocks: 1            Seconds: 13
+   > contract address:    0xb60ce47C7d7D6350D15382B5a5a0f054477Eb5e4
+   > block number:        12569661
+   > block timestamp:     1657521636
+   > account:             0x15C2ec8BaDd9EB4097Dbe9Df3B29E5248B5E77fF
+   > balance:             9.999516382498645871
+   > gas used:            193447 (0x2f3a7)
+   > gas price:           2.500000007 gwei
+   > value sent:          0 ETH
+   > total cost:          0.000483617501354129 ETH
+
+   Pausing for 2 confirmations...
+
+   -------------------------------
+   > confirmation number: 1 (block: 12569662)
+   > confirmation number: 2 (block: 12569663)
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.000483617501354129 ETH
+
+Summary
+=======
+> Total deployments:   1
+> Final cost:          0.000483617501354129 ETH
+
+
+
