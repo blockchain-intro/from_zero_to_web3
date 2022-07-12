@@ -5,16 +5,16 @@ contract Crowdfunding {
     // 参与金额
     mapping(address => uint) public joined;
     // 众筹目标
-    uint constant Target = 10 ether;
+    uint constant Target = 0.8 ether;
     // 众筹截止时间，公共可见
     uint public endTime;
     // 记录当前众筹价格
-    uint public price = 2 ether;
+    uint public price = 0.2 ether;
     // 作者提取资金之后，关闭众筹
     bool public closed = false;
     // 部署合约时调用构造器，初始化作者及众筹结束时间
     constructor() public {
-        author = 0x755DA5B4187564284A04A28ffFd876483EAEd967;
+        author = 0xA1D91D7b6Bd771c53eF7B7d12805368B46E52467;
         endTime = now + 30 days;
     }
     // 更新价格，普通链上内部函数定义
