@@ -9,13 +9,16 @@ contract Crowdfunding {
     // 众筹截止时间，公共可见
     uint public endTime;
     // 记录当前众筹价格
-    uint public price = 0.2 ether;
+    uint public price = 5 ether;
     // 作者提取资金之后，关闭众筹
     bool public closed = false;
     // 部署合约时调用构造器，初始化作者及众筹结束时间
     constructor() public {
         author = 0xA1D91D7b6Bd771c53eF7B7d12805368B46E52467;
         endTime = now + 30 days;
+    }
+    function getAuthor() public view returns (address) {
+        return address(author);
     }
     // 更新价格，普通链上内部函数定义
     function updatePrice() internal {

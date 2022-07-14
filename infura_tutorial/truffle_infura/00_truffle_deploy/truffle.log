@@ -1,9 +1,4 @@
-@Muzhi1920 ➜ /workspaces/from_zero_to_web3/infura_tutorial/00_deploy_contract (dev_infura ✗) $  truffle compile
-
-Compiling your contracts...
-===========================
-> Everything is up to date, there is nothing to compile.
-@Muzhi1920 ➜ /workspaces/from_zero_to_web3/infura_tutorial/00_deploy_contract (dev_infura ✗) $ truffle migrate --network ropsten
+@Muzhi1920 ➜ .../from_zero_to_web3/infura_tutorial/truffle_infura/00_truffle_deploy (main ✗) $ truffle migrate --network ropsten --reset
 
 Compiling your contracts...
 ===========================
@@ -20,15 +15,15 @@ Starting migrations...
 1_initial_migration.js
 ======================
 
-   Deploying 'Migrations'
+   Replacing 'Migrations'
    ----------------------
-   > transaction hash:    0xebebd170dc054086bb50c557fb289045b9c1a42f2459999cfcc2cebd75622f9b
+   > transaction hash:    0x617c70cbba39366246e52e462316a3a942f2acde31b50f5746593d65922ddc98
    > Blocks: 1            Seconds: 13
-   > contract address:    0xb60ce47C7d7D6350D15382B5a5a0f054477Eb5e4
-   > block number:        12569661
-   > block timestamp:     1657521636
+   > contract address:    0x4eBc823eB1121D8113d20f1f9D8827b71049bb41
+   > block number:        12590821
+   > block timestamp:     1657800252
    > account:             0x15C2ec8BaDd9EB4097Dbe9Df3B29E5248B5E77fF
-   > balance:             9.999516382498645871
+   > balance:             9.997722494993577248
    > gas used:            193447 (0x2f3a7)
    > gas price:           2.500000007 gwei
    > value sent:          0 ETH
@@ -37,8 +32,8 @@ Starting migrations...
    Pausing for 2 confirmations...
 
    -------------------------------
-   > confirmation number: 1 (block: 12569662)
-   > confirmation number: 2 (block: 12569663)
+   > confirmation number: 1 (block: 12590822)
+   > confirmation number: 2 (block: 12590823)
    > Saving migration to chain.
    > Saving artifacts
    -------------------------------------
@@ -48,6 +43,3 @@ Summary
 =======
 > Total deployments:   1
 > Final cost:          0.000483617501354129 ETH
-
-
-

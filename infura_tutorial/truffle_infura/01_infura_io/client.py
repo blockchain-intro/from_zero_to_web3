@@ -11,7 +11,7 @@ class Client(object):
     build client to access infura public node
     """
 
-    def __init__(self, provider: str, address: str, private_key: str, contract_conf: dict):
+    def __init__(self, provider: str, private_key: str, contract_conf: dict):
         """
         :param provider: str
         :param address: str, hex
@@ -25,16 +25,17 @@ class Client(object):
         self._web3 = Web3(Web3.HTTPProvider(self._provider))
         assert self._web3.isConnected()
 
-        assert self._web3.isAddress(address)
-        self._account = address
         self._private_key = private_key
+        self._account = self._web3.eth.account.from_key(self._private_key)
+        assert self._web3.isAddress(self._account.address)
 
-        assert (contract_conf['path'] is not None) and (contract_conf['address'] is not None)
+        assert (contract_conf['path'] is not None) and (contract_conf['contract_address'] is not None)
         self._contract = self.init_contract(contract_conf)
+
+        print('cur account:{}, isConnected:{}'.format(self._account.address, self._web3.isConnected()))
 
         self._transaction = None
 
-        logger.debug("cur env: account:%s, provider:%s", self._account, self._provider)
 
     def get_balance(self, unit):
         return self._web3.fromWei(self._web3.eth.get_balance(self._account), unit)
@@ -42,7 +43,20 @@ class Client(object):
     def init_contract(self, contract_conf):
         with open(contract_conf['path']) as f:
             raw_contract = json.load(f)
-        return self._web3.eth.contract(address=contract_conf['address'], abi=raw_contract['abi'])
+
+        contract = self._web3.eth.contract(abi=raw_contract['abi'], bytecode=raw_contract['bytecode']) # 合约对象
+        construct_txn = contract.constructor().buildTransaction({
+            'from': self._account.address,
+            'nonce': self._web3.eth.getTransactionCount(self._account.address),
+            'gas': 5000000,
+            'gasPrice': self._web3.toWei('21', 'gwei')})
+
+        signed = self._account.signTransaction(construct_txn)
+        tx_id = self._web3.eth.sendRawTransaction(signed.rawTransaction)
+        contract_addr = self._web3.eth.waitForTransactionReceipt(tx_id.hex()).contractAddress
+        c = self._web3.eth.contract(address=contract_addr, abi=raw_contract['abi'])
+        print('cur contract address :{}, functions set :{}'.format(c.address, c.all_functions()))
+        return c
 
     def transact(self, transaction):
 
