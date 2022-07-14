@@ -18,9 +18,9 @@ Web3是一个去中心化的互联网。主要通过各种全新的智能合约�
 
 - `geth_tutorial`：geth客户端
 - `solidity_tutorial`：补充solidity基础语法
+- `infura_tutorial`：使用infura节点部署合约与测试
 - `web3_py_tutorial`：Python接入Web3的API
 - `npm_tutorial`：node.js前端的package管理
-
 
 
 ### Blockchain
