@@ -6,19 +6,18 @@ Web3是一个去中心化的互联网。主要通过各种全新的智能合约�
 
 实现较高的安全性和去中心化水平的网络是web3生态的基础，这里核心的技术就是区块链。人们共享一个账本，这个账本不受任何中心化实体所有。所有人对该账本进行读写、校验交易记录等等活动。区块链涉及所有的底层技术将逐步在`docs`中展开补充。涉及Web3的技术开发，当前已逐渐成熟，无论`python`，`js`等语言版本在各社区频繁更新。
 
-`/examples`介绍了`ganache`和`truffle`的测试，以及实现简单的`DApp`。对于开发一个简单的DApp来说，具体的development workflow如下：
+`/examples`中介绍了`ganache`和`truffle`的测试，以及使用`node.js`实现了简单的`DApp`。
+对于开发一个简单的DApp来说，具体的development workflow如下：
 1. geth创建私链
 2. truffle编译与部署contract
 3. 前端web3.js调用wallet（例MetaMask）实现业务需求
 4. 后端实时查询
 
 
-
-
 ## tutorial教程
 
-- `geth_tutorial`：测试geth客户端
-- `solidity_tutorial`：测试solidity基础语法
+- `geth_tutorial`：geth客户端
+- `solidity_tutorial`：补充solidity基础语法
 - `web3_py_tutorial`：Python接入Web3的API
 - `npm_tutorial`：node.js前端的package管理
 
